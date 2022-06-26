@@ -1,0 +1,18 @@
+import DocsBar from '@/sections/DocsBar';
+
+export const Docs = () => (
+	<DocsBar
+		links={[
+			{ name: '0.1', href: '/docs/0.1' },
+			{ name: 'Projects', href: '/docs/0.1/project' },
+			{ name: 'Images', href: '/docs/0.1/image' },
+		]}
+	/>
+);
+
+<Docs />
+
+# TeXbld 0.1
+
+This is the first release of TeXbld, and contains most of the functionality intended during its design.
+It is capable of pulling/building images, solving dependencies, and running arbitrary user commands in a container.
