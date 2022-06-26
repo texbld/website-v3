@@ -45,7 +45,7 @@ export default function Index() {
             exotic packages on your system.
           </Card>
           <Card title="Immutable." icon={<FaLock />}>
-            Checks and Hashes ensure that your image is built the same way,
+            Checks and hashes ensure that your image is built the same way,
             every time, no matter whose computer it is on.
           </Card>
           <Card title="Shareable." icon={<FaCloudUploadAlt />}>
