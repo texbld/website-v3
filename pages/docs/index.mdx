@@ -9,12 +9,12 @@ import DocsBar from '@/sections/DocsBar';
 
 # Getting Started
 
-Before you begin using TeXbld, you must install it and its only dependency.
+Before you begin using TeXbld, you must install its dependencies and Docker.
 
 ## Installation
 
 1. Install Docker. Platform-specific instructions are located in the [Docker documentation](https://docs.docker.com/get-docker/).
-2. Make sure that the docker daemon is actually running, particularly with the desktop versions.
+2. Make sure that the Docker daemon is actually running, particularly with the desktop versions.
 3. Install the latest possible version of Python 3 **and Pip**, either from [python.org](https://www.python.org/downloads/) or from your local package manager.
 4. Run `pip install texbld` from your command line, which pulls the latest version of TeXbld from the pypi registry.
 5. Run `texbld` to verify that the program is installed and to create all of the necessary directories.
@@ -24,4 +24,5 @@ Before you begin using TeXbld, you must install it and its only dependency.
 The following directories will store all of TeXbld's configurations and cache:
 
 1. `~/.config/texbld` - configuration directory
-2. `~/.cache/texbld` - cache directory
+2. `~/.config/texbld/packages` - local images
+3. `~/.cache/texbld` - cache directory

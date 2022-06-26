@@ -36,9 +36,10 @@ and use that as the revision.
 The `--rev` option allows you to specify a revision or a branch. The GitHub API
 will be used so that only commit SHA's are used.
 
-The `--sha256` option allows you to specify an exact sha256 of the tarball. This
-can generally be computed for you, so you will likely not use this option very
-often.
+The `--sha256` option allows you to specify an exact sha256 of the tarball. In
+most cases, this is computable using GitHub (unless you aren't connected to the
+internet and you are going off of a cached build), so you will likely not use
+this option very often.
 
 ## Building the parent image
 
