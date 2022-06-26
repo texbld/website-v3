@@ -5,11 +5,15 @@ import {
   Center,
   Button,
   VStack,
+  Flex,
+  Text,
 } from "@chakra-ui/react";
 import Card from "@/sections/Card";
 import { useRouter } from "next/router";
 import React from "react";
 import { FaCloudUploadAlt, FaDocker, FaLock } from "react-icons/fa";
+import { Image } from "@chakra-ui/react";
+import Link from "@/blocks/Link";
 
 export default function Index() {
   const blue = useColorModeValue("cyan.400", "cyan.700");
@@ -19,7 +23,7 @@ export default function Index() {
       <Center marginBottom={5}>
         <Heading
           fontWeight={"bold"}
-          fontSize={40}
+          fontSize={50}
           maxWidth="50rem"
           textAlign={"center"}
         >
@@ -39,7 +43,7 @@ export default function Index() {
         </Button>
       </Center>
       <Center>
-        <Box>
+        <Flex flexWrap={"wrap"} justifyContent={"center"}>
           <Card title="Isolated." icon={<FaDocker />}>
             TeXbld uses docker, so that you never have to worry about installing
             exotic packages on your system.
@@ -53,6 +57,58 @@ export default function Index() {
             GitHub repository, and anyone using your image will experience
             consistent builds.
           </Card>
+        </Flex>
+      </Center>
+      <Center marginTop={"50"}>
+        <Box>
+          <Heading textAlign={"center"} m={5} fontSize={50}>
+            Scaffold. Build. Compile.
+          </Heading>
+          <Image
+            src="/images/commands.png"
+            alt="texbld commands"
+            width={700}
+            borderRadius={10}
+          />
+        </Box>
+      </Center>
+      <Center marginTop="50">
+        <Box>
+          <Heading textAlign={"center"} m={5} fontSize={50}>
+            Simple Configuration.
+          </Heading>
+          <Center>
+            <Text m={5} maxW="500" fontSize={20}>
+              TeXbld makes it easy to hack on your own images and projects using
+              the intuitive TOML configuration format. Check out{" "}
+              <Link href="https://github.com/texbld/templates" isExternal>
+                some examples we made.
+              </Link>
+            </Text>
+          </Center>
+          <Flex
+            justifyContent={"center"}
+            wrap={"wrap"}
+            gap={5}
+            verticalAlign={"center"}
+          >
+            <Box>
+              <Image
+                src="/images/imagetoml.png"
+                alt="texbld image.toml"
+                borderRadius={10}
+                width={400}
+              />
+            </Box>
+            <Box>
+              <Image
+                src="/images/texbldtoml.png"
+                alt="texbld project toml"
+                borderRadius={10}
+                width={500}
+              />
+            </Box>
+          </Flex>
         </Box>
       </Center>
     </Box>
