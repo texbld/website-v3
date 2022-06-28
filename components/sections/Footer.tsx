@@ -1,6 +1,6 @@
 import React from "react";
-import { Center, Text, useColorModeValue, Icon } from "@chakra-ui/react";
-import { FaGithub, FaPython } from "react-icons/fa";
+import {Center, Text, useColorModeValue} from "@chakra-ui/react";
+import {FaGithub, FaPython} from "react-icons/fa";
 import Link from "@/blocks/Link";
 
 export default function Footer() {
@@ -8,12 +8,12 @@ export default function Footer() {
   const textcolor = useColorModeValue("gray.500", "gray.400");
   return (
     <Center gap={3} p={5}>
-      <Link href="https://github.com/texbld" isExternal>
+      <Link href="https://github.com/texbld" isExternal aria-label="GitHub">
         <Text fontSize={25}>
           <FaGithub />
         </Text>
       </Link>
-      <Link href="https://pypi.org/project/texbld/" isExternal>
+      <Link href="https://pypi.org/project/texbld/" isExternal aria-label="PyPi">
         <Text fontSize={25}>
           <FaPython />
         </Text>

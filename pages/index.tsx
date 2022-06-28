@@ -4,15 +4,14 @@ import {
   Box,
   Center,
   Button,
-  VStack,
   Flex,
   Text,
 } from "@chakra-ui/react";
 import Card from "@/sections/Card";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import React from "react";
-import { FaCloudUploadAlt, FaDocker, FaLock } from "react-icons/fa";
-import { Image } from "@chakra-ui/react";
+import {FaCloudUploadAlt, FaDocker, FaLock} from "react-icons/fa";
+import {Image} from "@chakra-ui/react";
 import Link from "@/blocks/Link";
 
 export default function Index() {
