@@ -1,6 +1,12 @@
 import React from "react";
-import {Center, Text, useColorModeValue} from "@chakra-ui/react";
-import {FaGithub, FaPython} from "react-icons/fa";
+import {
+  Box,
+  Center,
+  IconButton,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { FaGithub, FaPython } from "react-icons/fa";
 import Link from "@/blocks/Link";
 
 export default function Footer() {
@@ -9,11 +15,15 @@ export default function Footer() {
   return (
     <Center gap={3} p={5}>
       <Link href="https://github.com/texbld" isExternal aria-label="GitHub">
-        <Text fontSize={25}>
+        <Box fontSize={25}>
           <FaGithub />
-        </Text>
+        </Box>
       </Link>
-      <Link href="https://pypi.org/project/texbld/" isExternal aria-label="PyPi">
+      <Link
+        href="https://pypi.org/project/texbld/"
+        isExternal
+        aria-label="PyPi"
+      >
         <Text fontSize={25}>
           <FaPython />
         </Text>

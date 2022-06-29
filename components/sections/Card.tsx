@@ -1,4 +1,4 @@
-import {Box, Center, Flex, Text, useColorModeValue} from "@chakra-ui/react";
+import { Box, Center, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 
 export default function Card(props: {
@@ -7,7 +7,7 @@ export default function Card(props: {
   children?: React.ReactNode;
 }) {
   const gray = useColorModeValue("gray.200", "gray.700");
-  const blue = useColorModeValue("cyan.400", "cyan.700");
+  const blue = useColorModeValue("cyan.400", "cyan.800");
   return (
     <Box m={5} p={2} bg={gray} maxWidth="24rem" borderRadius={5} shadow={"lg"}>
       <Flex m={2} gap={3} justify="left">

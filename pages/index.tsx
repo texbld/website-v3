@@ -8,14 +8,14 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Card from "@/sections/Card";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import React from "react";
-import {FaCloudUploadAlt, FaDocker, FaLock} from "react-icons/fa";
-import {Image} from "@chakra-ui/react";
+import { FaCloudUploadAlt, FaDocker, FaLock } from "react-icons/fa";
+import { Image } from "@chakra-ui/react";
 import Link from "@/blocks/Link";
 
 export default function Index() {
-  const blue = useColorModeValue("cyan.400", "cyan.700");
+  const blue = useColorModeValue("cyan.400", "cyan.800");
   const router = useRouter();
   return (
     <Box m={2}>
@@ -80,9 +80,7 @@ export default function Index() {
             <Text m={5} maxW="500" fontSize={20}>
               TeXbld makes it easy to hack on your own images and projects using
               the intuitive TOML configuration format. Check out{" "}
-              <Link href="/featured">
-                some examples.
-              </Link>
+              <Link href="/featured">some examples.</Link>
             </Text>
           </Center>
           <Flex

@@ -20,7 +20,7 @@ export default function Hamburger(props: { links: LinkList }) {
   return (
     <>
       <Box>
-        <Button onClick={onOpen}>
+        <Button onClick={onOpen} aria-label="Hamburger Navigation">
           <HamburgerIcon />
         </Button>
       </Box>
