@@ -80,8 +80,8 @@ export default function Index() {
             <Text m={5} maxW="500" fontSize={20}>
               TeXbld makes it easy to hack on your own images and projects using
               the intuitive TOML configuration format. Check out{" "}
-              <Link href="https://github.com/texbld/templates" isExternal>
-                some examples we made.
+              <Link href="/featured">
+                some examples.
               </Link>
             </Text>
           </Center>
