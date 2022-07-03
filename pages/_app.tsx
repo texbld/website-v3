@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="description"
           content="TeXbld is a build tool that uses a simple configuration syntax and the docker virtualization technology to ensure reproducible builds across different operating systems and environments."
         />
+        <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
       <Layout>
         <CSSReset />
