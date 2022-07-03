@@ -1,0 +1,25 @@
+import { Docs } from "./index.mdx";
+
+<Docs />
+
+# Resource Schemes 
+
+TeXbld accepts resource schemes in the CLI. The following schemes
+are supported:
+
+1. For a GitHub image, use `github:(owner)/(repository)#(revision)` or
+   `github:(owner)/(repository)` to get the latest revision on the default
+   branch.
+2. For a local image, use `local:(name)`.
+3. For a docker image, use `docker:(name)`.
+
+---
+
+# Valid Examples
+
+1. `github:texbld/templates`
+2. `github:texbld/templates#master`
+3. `github:texbld/templates#7ababb02f2737b83e2ac632a03f27e7c891b163e`
+4. `docker:alpine`
+5. `docker:pandoc/core:latest`
+6. `local:myimage`

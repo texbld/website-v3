@@ -1,4 +1,5 @@
 import { Docs } from "./index.mdx";
+import Link from '@/blocks/Link';
 
 <Docs />
 
@@ -19,14 +20,9 @@ After scaffolding is complete, you will see that `$PROJECT_DIR` contains a
 
 ## Image
 
-While scaffolding, TeXbld will accept resource schemes. The following schemes
-are supported:
-
-1. For a GitHub image, use `github:(owner)/(repository)#(revision)` or
-   `github:(owner)/(repository)` to get the latest revision on the default
-   branch.
-2. For a local image, use `local:(name)`.
-3. For a docker image, use `docker:(name)`.
+TeXbld only accepts
+<Link href="./resource">Resource Schemes</Link>
+for passing an image.
 
 ## Specifying another configuration file
 
@@ -64,7 +60,7 @@ container specified by your project's image. If you run
 # Validation
 
 Run `texbld validate project .`.
-This checks that the texbld project located in your current working directory is valid. It is valid if no errors are thrown.
+This checks that the texbld project located in your current working directory is valid. If no errors are thrown, you're all set.
 
 ---
 
@@ -84,10 +80,10 @@ proactively made in order to allow new configurations in the future.
 The value of this specifies either a Docker image, a GitHub image, or a
 LocalImage.
 
-Below are examples (mutually exclusive) of the above:
+Below are a set of mutually exclusive examples:
 
-1. `github = {owner = "texbld", repository = "templates", revision = "7ababb02f2737b83e2ac632a03f27e7c891b163e", sha256 = "b173479d3166a3d7fa8941ff8bf40af100ba2d5cb5caf979b47c0934d417799f", config = "md.toml" }`
-2. `local = {name = "mpl", config = "image.toml"}`
+1. `github = {owner = "texbld", repository = "templates", revision = "(revision sha)", sha256 = "(tarball sha256)", config = "md.toml" }`
+2. `local = {name = "template", config = "image.toml"}`
 3. `docker = "alpine"`
 
 You may notice that the GitHub and local image hashes have an extra (and
