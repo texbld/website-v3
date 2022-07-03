@@ -66,8 +66,8 @@ export default function Index() {
 					<Flex justify={'center'}>
 						<iframe
 							src='https://asciinema.org/a/505865/iframe'
-							width={600}
 							height={540}
+							style={{ flexGrow: 1 }}
 						></iframe>
 					</Flex>
 				</Box>
