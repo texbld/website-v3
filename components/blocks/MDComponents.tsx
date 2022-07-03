@@ -75,7 +75,7 @@ const components = {
   h2: H2,
   h3: H3,
   h4: H4,
-  hr: () => <Divider />,
+  hr: () => <Divider m={5} />,
   p: P,
   code: CODE,
   ul: Ul,
