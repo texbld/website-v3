@@ -63,12 +63,7 @@ export default function Index() {
           <Heading textAlign={"center"} m={5} fontSize={50}>
             Scaffold. Build. Compile.
           </Heading>
-          <Image
-            src="/images/commands.png"
-            alt="texbld commands"
-            width={700}
-            borderRadius={10}
-          />
+          <Image src="/images/commands.svg" alt="texbld commands" width={700} />
         </Box>
       </Center>
       <Center marginTop="50">
@@ -91,18 +86,16 @@ export default function Index() {
           >
             <Box>
               <Image
-                src="/images/imagetoml.png"
+                src="/images/imagetoml.svg"
                 alt="texbld image.toml"
-                borderRadius={10}
-                width={400}
+                height={300}
               />
             </Box>
             <Box>
               <Image
-                src="/images/texbldtoml.png"
+                src="/images/texbldtoml.svg"
                 alt="texbld project toml"
-                borderRadius={10}
-                width={500}
+                height={300}
               />
             </Box>
           </Flex>
