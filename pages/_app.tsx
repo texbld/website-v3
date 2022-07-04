@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app';
 import Layout from '@/layouts/Layout';
 import { ChakraProvider, CSSReset } from '@chakra-ui/react';
 import Head from 'next/head';
-import 'prismjs/themes/prism-tomorrow.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (

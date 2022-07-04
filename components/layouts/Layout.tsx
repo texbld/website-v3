@@ -6,16 +6,11 @@ import Head from 'next/head';
 import siteconfig from '../../site-config';
 import { Center, Container } from '@chakra-ui/react';
 import MDComponents from '../blocks/MDComponents';
-import prism from 'prismjs';
-import 'prismjs/components/prism-toml';
 
 export default function Layout(props: {
 	children: React.ReactNode;
 	title?: string;
 }) {
-	useEffect(() => {
-		prism.highlightAll();
-	}, []);
 	return (
 		<>
 			<Head>
