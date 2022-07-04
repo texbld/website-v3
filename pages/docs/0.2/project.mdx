@@ -7,8 +7,6 @@ import Link from '@/blocks/Link';
 
 TeXbld projects are scaffolded and built from TeXbld images.
 
----
-
 # Scaffolding
 
 In order to scaffold a project into a currently non-existent directory
@@ -30,14 +28,10 @@ Use the `--config (file)` option allows you to specify a different toml file
 than the default `image.toml`. This is useful when a repository has multiple
 different configurations
 
----
-
 # Building an Image
 
 Change your working directory to `$PROJECT_DIR` and run `texbld build`. This
 will build out the corresponding docker image.
-
----
 
 # Running Commands
 
@@ -55,14 +49,10 @@ Running `texbld run compile` will run `pandoc -o main.pdf main.md` in a docker
 container specified by your project's image. If you run
 `texbld run nonexistent`, TeXbld will throw an error.
 
----
-
 # Validation
 
 Run `texbld validate project .`.
 This checks that the texbld project located in your current working directory is valid. If no errors are thrown, you're all set.
-
----
 
 # Other Options
 
