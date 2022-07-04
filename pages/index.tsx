@@ -94,14 +94,14 @@ export default function Index() {
 							<Image
 								src='/images/imagetoml.svg'
 								alt='texbld image.toml'
-								height={300}
+								width={400}
 							/>
 						</Box>
 						<Box>
 							<Image
 								src='/images/texbldtoml.svg'
 								alt='texbld project toml'
-								height={300}
+								width={600}
 							/>
 						</Box>
 					</Flex>
