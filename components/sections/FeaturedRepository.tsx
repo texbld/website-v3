@@ -1,4 +1,4 @@
-import {Box, Heading, useColorModeValue} from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import Link from "@/blocks/Link";
 
@@ -7,7 +7,7 @@ export default function FeaturedRepository(props: {
   repository: string;
   children: React.ReactNode;
 }) {
-  const bg = useColorModeValue('gray.200', 'gray.700')
+  const bg = "gray.700";
   return (
     <Box borderRadius={5} shadow={"lg"} p={3} my={2} bgColor={bg} maxW={500}>
       <Link
