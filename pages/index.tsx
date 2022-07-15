@@ -13,10 +13,12 @@ export default function Index() {
     <Box m={2}>
       <Center marginBottom={5}>
         <Heading
-          fontWeight={"bold"}
-          fontSize={50}
+          fontWeight={"extrabold"}
+          fontSize={60}
           maxWidth="50rem"
           textAlign={"center"}
+          bgGradient="linear(to-r, green.200, cyan.500)"
+          bgClip="text"
         >
           A Modern Build Tool for Your Papers.
         </Heading>
