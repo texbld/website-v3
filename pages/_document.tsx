@@ -4,7 +4,11 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head></Head>
+      <Head>
+        <script>
+          localStorage.clear();
+        </script>
+      </Head>
       <body>
         <ColorModeScript />
         <Main />
