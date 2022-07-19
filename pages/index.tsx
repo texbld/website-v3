@@ -7,7 +7,7 @@ import { Image } from "@chakra-ui/react";
 import Link from "@/blocks/Link";
 
 export default function Index() {
-  const blue = "cyan.800";
+  const blue = "cyan.400";
   const router = useRouter();
   return (
     <Box m={2}>
@@ -17,7 +17,7 @@ export default function Index() {
           fontSize={60}
           maxWidth="50rem"
           textAlign={"center"}
-          bgGradient="linear(to-r, green.200, cyan.500)"
+          bgGradient="linear(to-r, cyan.400, black)"
           bgClip="text"
         >
           A Modern Build Tool for Your Papers.

@@ -6,8 +6,8 @@ export default function Card(props: {
   title: string;
   children?: React.ReactNode;
 }) {
-  const gray = "gray.700";
-  const blue = "cyan.800";
+  const gray = "gray.200";
+  const blue = "cyan.400";
   return (
     <Box m={5} p={2} bg={gray} maxWidth="24rem" borderRadius={5} shadow={"lg"}>
       <Flex m={2} gap={3} justify="left">

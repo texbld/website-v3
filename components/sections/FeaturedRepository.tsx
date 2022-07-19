@@ -7,7 +7,7 @@ export default function FeaturedRepository(props: {
   repository: string;
   children: React.ReactNode;
 }) {
-  const bg = "gray.700";
+  const bg = "gray.200";
   return (
     <Box borderRadius={5} shadow={"lg"} p={3} my={2} bgColor={bg} maxW={500}>
       <Link

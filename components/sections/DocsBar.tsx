@@ -6,8 +6,8 @@ import LinkList from "../linklist";
 
 export default function Docs(props: { links: LinkList }) {
   const [isSmall] = useMediaQuery("(max-width: 600px)");
-  const links: LinkList = [{ name: "Docs", href: "/docs" }, ...props.links];
-  const bg = "gray.600";
+  const links: LinkList = [{ name: "/", href: "/docs" }, ...props.links];
+  const bg = "gray.300";
   return (
     <>
       <Flex
