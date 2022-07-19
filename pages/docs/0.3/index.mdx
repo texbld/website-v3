@@ -1,0 +1,21 @@
+import DocsBar from '@/sections/DocsBar';
+export const Docs = () => (
+	<DocsBar
+		links={[
+			{ name: '/0.3/', href: '/docs/0.3' },
+			{ name: 'Projects', href: '/docs/0.3/project' },
+			{ name: 'Images', href: '/docs/0.3/image' },
+			{ name: 'Resources', href: '/docs/0.3/resource' },
+			{ name: 'Sha256', href: '/docs/0.3/sha' },
+		]}
+	/>
+);
+
+<Docs />
+
+# TeXbld 0.3
+
+TeXbld 0.3 comes with relatively minor improvements and bug fixes, which include:
+
+1. Long-running containers get cleaned up.
+2. The logs of the container are printed real-time.
