@@ -1,18 +1,15 @@
 {
-  description = "A very basic flake";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
-
-  outputs = { self, nixpkgs }: 
-  let
-    pkgs = import nixpkgs { system = "x86_64-linux"; };
-  in
-  {
-
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    devShell.x86_64-linux = pkgs.mkShell {
-      buildInputs = with pkgs; [nodejs yarn];
-    };
-
+  description = "TeXbld website";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+    flake-utils.url = "github:numtide/flake-utils";
   };
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let pkgs = import nixpkgs { inherit system; };
+      in {
+        devShell = pkgs.mkShell { buildInputs = with pkgs; [ nodejs yarn ]; };
+        formatter = nixpkgs.legacyPackages."${system}".nixfmt;
+      });
 }
