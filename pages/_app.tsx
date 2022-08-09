@@ -2,12 +2,19 @@ import type { AppProps } from "next/app";
 import Layout from "@/layouts/Layout";
 import { ChakraProvider, CSSReset, extendTheme } from "@chakra-ui/react";
 import Head from "next/head";
-import "../globals.css";
+import "@fontsource/fira-sans/300.css"
+import "@fontsource/fira-sans/400.css"
+import "@fontsource/fira-sans/700.css"
+import "@fontsource/fira-sans/900.css"
 
 const theme = extendTheme({
   config: {
     initialColorMode: "light",
   },
+  fonts: {
+    heading: `'Fira Sans', sans-serif`,
+    body: `'Fira Sans', sans-serif`,
+  }
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
