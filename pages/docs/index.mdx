@@ -1,4 +1,5 @@
 import DocsBar from '@/sections/DocsBar';
+import Link from '@/blocks/Link.tsx';
 
 <DocsBar
 	links={[
@@ -9,15 +10,31 @@ import DocsBar from '@/sections/DocsBar';
 
 # Getting Started
 
-Before you begin using TeXbld, you must install its dependencies and Docker.
-
-## Installation
+## Dependencies
 
 1. Install Docker. Platform-specific instructions are located in the [Docker documentation](https://docs.docker.com/get-docker/).
 2. Make sure that the Docker daemon is actually running, particularly with the desktop versions.
-3. Install the latest possible version of Python 3 **and Pip**, either from [python.org](https://www.python.org/downloads/) or from your local package manager.
-4. Run `pip install -U texbld` from your command line, which pulls the latest version of TeXbld from the pypi registry.
-5. Run `texbld` to verify that the program is installed and to create all of the necessary directories.
+
+## Option 1: Stable Installation
+
+**Note**: You may want to use a virtual environment to prevent texbld's dependencies from causing conflicts.
+
+1. Install the latest possible version of Python 3 **and Pip**, either from [python.org](https://www.python.org/downloads/) or from your local package manager. **it must be at least 3.9.**
+2. Run `pip install -U texbld` from your command line, which pulls the latest version of TeXbld from the pypi registry.
+3. Run `texbld` to verify that the program is installed and to create all of the necessary directories.
+
+## Option 2: Bleeding-Edge
+
+The dependency-free zipapp (built nightly by the GitHub CI) is available <Link href="https://github.com/texbld/texbld/releases/download/nightly/texbld.pyz">here</Link>
+
+## Option 3: Installation with Nix
+
+TeXbld is available as a nix flake. Run `nix profile install github:texbld/texbld` for the bleeding-edge version or `nix profile install github:texbld/texbld/release-0.3` for the latest stable release.
+
+## Option 4: Installer (WIP)
+
+A custom installer/version manager is being developed <Link href="https://github.com/texbld/texbld-manager">here.</Link>
+
 
 ## Directories
 

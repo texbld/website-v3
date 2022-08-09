@@ -4,6 +4,7 @@ import { ChakraProvider, CSSReset, extendTheme } from "@chakra-ui/react";
 import Head from "next/head";
 import "@fontsource/fira-sans/300.css"
 import "@fontsource/fira-sans/400.css"
+import "@fontsource/fira-sans/600.css"
 import "@fontsource/fira-sans/700.css"
 import "@fontsource/fira-sans/900.css"
 
