@@ -1,0 +1,24 @@
+import DocsBar from '@/sections/DocsBar';
+import Link from '@/blocks/Link';
+export const Docs = () => (
+	<DocsBar
+		links={[
+			{ name: '/0.4/', href: '/docs/0.4' },
+			{ name: 'Projects', href: '/docs/0.4/project' },
+			{ name: 'Images', href: '/docs/0.4/image' },
+			{ name: 'Resources', href: '/docs/0.4/resource' },
+			{ name: 'Sha256', href: '/docs/0.4/sha' },
+		]}
+	/>
+);
+
+<Docs />
+
+# TeXbld 0.4
+
+TeXbld 0.4 comes with some significant changes, which include:
+
+- Resource scheme expressions changed (Check <Link href="/docs/0.4/resource">Resources</Link>).
+- Real-time logs shown when both building images and running containers.
+- Configuration via environment variables
+- Removed some explicit dependencies

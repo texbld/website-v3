@@ -1,0 +1,16 @@
+import { Docs } from "./index.mdx";
+import Link from "@/blocks/Link";
+
+<Docs />
+
+# GitHub Revisions and SHA's
+
+It is considered an anti-pattern to use a branch name as a revision because an exact
+sha must be provided to preserve immutability.
+
+Instead, use the TeXbld `getsha256` utility to get exact commit and tarball
+hashes for GitHub repositories. Check out our guide on 
+<Link href="./resource">resource schemes</Link> 
+to learn more.
+
+A valid example: `texbld getsha256 github:texbld/templates/master`

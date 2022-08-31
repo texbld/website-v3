@@ -1,0 +1,168 @@
+import { Docs } from "./index.mdx";
+import Link from "@/blocks/Link";
+
+<Docs />
+
+# Image Configuration
+
+A TeXbld local image is stored as a directory in
+`$HOME/.config/texbld/packages`. You can then upload it to GitHub to allow
+others to access your image.
+
+In order to make our first image, cd into the TeXbld packages directory and run
+`texbld generate image myimage`. This will create an image with an image.toml
+file with blank defaults.
+
+
+# Allowed Keys
+
+Although we go over configuration here, you might want to check out the
+JSONschema <Link href="https://github.com/texbld/texbld/blob/master/texbld/parser/v1/image_schema.json" isExternal > here. </Link>
+
+## Legend
+
+`$IMAGE_DIR` will always be the root of your image, in our case,
+`$HOME/.config/texbld/packages/myimage/`. `$PROJECT_DIR` will be the directory
+into which a project is scaffolded.
+
+## name (string) - REQUIRED
+
+This specifies the name that will be used to prefix the docker image. Note: When
+you scaffold a project based on a local image, TeXbld will use the **directory**
+that the image is in and not this value.
+
+## version (string) - REQUIRED
+
+For this version of TeXbld, the only permitted version is "1". This option was
+proactively made in order to allow new configurations in the future.
+
+## inherit (table) - REQUIRED
+
+The value of this specifies either a Docker image, a GitHub image, or a
+LocalImage. When you inherit from an image, you inherit all files in the build
+image and in the project scaffold (unless you overwrite them). The docker `FROM`
+directive will be utilized in the generated Dockerfile.
+
+Below are a set of mutually exclusive examples:
+
+1. `github = {owner = "texbld", repository = "templates", revision = "(revision sha)", sha256 = "(tarball sha256)", config = "md.toml" }`
+2. `local = {name = "template", config = "image.toml"}`
+3. `docker = "alpine"`
+
+You may notice that the GitHub and local image hashes have an extra (and
+optional) "config" key. The default is always "image.toml", but this value
+allows authors to share multiple different configurations stored in a single
+repository. For example, an image might have a template for a vanilla assignment
+in the `image.toml` file, while having a template for biology papers with
+specific dependencies in the `bio.toml` file.
+
+By default, the TeXbld cli will generate an image which inherits from the base
+alpine image.
+
+If you want to inherit from a GitHub image, refer 
+<Link href="/docs/0.3/sha">here</Link> for pegging revisions and sha256's.
+
+## install (string)
+
+This is your package manager's install command. **It is only called if the
+packages array is not empty.** Values for common linux docker images are as
+follows:
+
+- Alpine - `apk add`
+- Debian - `apt install -y`
+- Red Hat - `dnf install -y`
+
+## packages (string array)
+
+This is an array of packages to pass into the `install` command. For instance, a
+TOML configuration file containing the following keys,
+
+```
+install = "apk add"
+packages = [ "vim", "gzip" ]
+```
+
+would execute `apk add vim gzip`.
+
+## update (string)
+
+This command **is only run if you specify a non-empty string value for it**.
+There may be instances in which you may absolutely need to update the package
+index for your manager, but docker images usually make it so that you don't have
+to. Most of the time, it will just bloat up your image build.
+
+Needless to say, these are update commands for some common distros:
+
+- Alpine - `apk update`
+- Debian - `apt update -y`
+- Red Hat - `dnf update -y`
+
+## files (table)
+
+These are custom scripts that are required on the docker image. In the following
+example,
+
+```
+[files]
+"directory/myscript.sh" = "/usr/bin/myscript"
+"config.txt" = "/config"
+```
+
+The file in `$IMAGE_DIR/directory/myscript.sh` will get copied over to
+`/usr/bin/myscript` in the final image, while `$IMAGE_DIR/config.txt` gets
+copied over to `/config`. **Please use absolute paths**, or you might get
+undesired behavior, as the working directory is the same as the one into which
+texbld mounts a project (`/texbld`).
+
+## setup (string array)
+
+This array contains any extra commands that you might want to run **after**
+copying your files over. You should not consider doing time-intensive steps
+here. e.g. `setup = ['echo hello', 'echo world']`
+
+## project.files (table)
+
+This contains a set of key-value pairs indicating where you want files in your
+image repository to go into a user's project. The keys indicate paths in your
+image directory, while the values indicate the corresponding paths in a user's
+project directory. The following example,
+
+```
+[project.files]
+"directory/myscript.sh" = "ascript.sh"
+"config.txt" = "src/config.txt"
+```
+
+would copy `$IMAGE_DIR/directory/myscript.sh` to `$PROJECT_DIR/ascript.sh`,
+while `$IMAGE_DIR/config.txt` is copied to `src/config.txt`. Write these
+key-value pairs so that they do not overwrite each other, unless you want
+undesired behavior.
+
+## project.commands (table)
+
+This contains a set of key-value pairs for scripts that you want to be executed
+project-side. They will be executed in a docker container, with the working
+directory being the project root.
+
+If an configuration was as follows and scaffolded,
+
+```
+[project.files]
+"template.md" = "main.md"
+
+[project.commands]
+compile = "pandoc main.md -o main.pdf"
+```
+
+running `texbld run compile` with the working directory inside `$PROJECT_DIR`
+would compile `$PROJECT_DIR/main.md` and create `$PROJECT_DIR/main.pdf`.
+
+---
+
+# Validation
+
+After configuring our local image, we can validate it by running
+`texbld validate image myimage`. If you also have a different configuration file
+in `bio.toml`, you would run `texbld validate image myimage -c bio.toml`. A
+`--cache` option is also present if you trust that your cache has not been
+tampered with.
